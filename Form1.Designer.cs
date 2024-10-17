@@ -60,9 +60,20 @@
             button_followURL = new Button();
             button_compUrl = new Button();
             label_app = new Label();
+            gbox_addCo = new GroupBox();
+            label_addcomp = new Label();
+            tbox_addToCo = new TextBox();
+            label_addToURL = new Label();
+            tbox_addCoUrl = new TextBox();
+            label_cleared = new Label();
+            tbox_cleared = new TextBox();
+            label_hq = new Label();
+            tbox_hq = new TextBox();
+            button_addToCo = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             gbox_addjob.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            gbox_addCo.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView1
@@ -337,7 +348,7 @@
             // button_Delete
             // 
             button_Delete.BackColor = Color.SkyBlue;
-            button_Delete.Location = new Point(1692, 201);
+            button_Delete.Location = new Point(1621, 16);
             button_Delete.Name = "button_Delete";
             button_Delete.Size = new Size(188, 50);
             button_Delete.TabIndex = 14;
@@ -348,7 +359,7 @@
             // button_followURL
             // 
             button_followURL.BackColor = Color.SkyBlue;
-            button_followURL.Location = new Point(1692, 21);
+            button_followURL.Location = new Point(1678, 893);
             button_followURL.Name = "button_followURL";
             button_followURL.Size = new Size(344, 61);
             button_followURL.TabIndex = 15;
@@ -359,7 +370,7 @@
             // button_compUrl
             // 
             button_compUrl.BackColor = Color.SkyBlue;
-            button_compUrl.Location = new Point(1692, 115);
+            button_compUrl.Location = new Point(1678, 987);
             button_compUrl.Name = "button_compUrl";
             button_compUrl.Size = new Size(344, 57);
             button_compUrl.TabIndex = 16;
@@ -376,12 +387,106 @@
             label_app.TabIndex = 17;
             label_app.Text = "Application";
             // 
+            // gbox_addCo
+            // 
+            gbox_addCo.Controls.Add(button_addToCo);
+            gbox_addCo.Controls.Add(tbox_hq);
+            gbox_addCo.Controls.Add(label_hq);
+            gbox_addCo.Controls.Add(tbox_cleared);
+            gbox_addCo.Controls.Add(label_cleared);
+            gbox_addCo.Controls.Add(tbox_addCoUrl);
+            gbox_addCo.Controls.Add(label_addToURL);
+            gbox_addCo.Controls.Add(tbox_addToCo);
+            gbox_addCo.Controls.Add(label_addcomp);
+            gbox_addCo.Location = new Point(1896, 30);
+            gbox_addCo.Name = "gbox_addCo";
+            gbox_addCo.Size = new Size(808, 430);
+            gbox_addCo.TabIndex = 18;
+            gbox_addCo.TabStop = false;
+            gbox_addCo.Text = "Add Company";
+            // 
+            // label_addcomp
+            // 
+            label_addcomp.AutoSize = true;
+            label_addcomp.Location = new Point(29, 52);
+            label_addcomp.Name = "label_addcomp";
+            label_addcomp.Size = new Size(146, 41);
+            label_addcomp.TabIndex = 19;
+            label_addcomp.Text = "Company";
+            // 
+            // tbox_addToCo
+            // 
+            tbox_addToCo.Location = new Point(255, 52);
+            tbox_addToCo.Name = "tbox_addToCo";
+            tbox_addToCo.Size = new Size(514, 47);
+            tbox_addToCo.TabIndex = 20;
+            // 
+            // label_addToURL
+            // 
+            label_addToURL.AutoSize = true;
+            label_addToURL.Location = new Point(29, 130);
+            label_addToURL.Name = "label_addToURL";
+            label_addToURL.Size = new Size(203, 41);
+            label_addToURL.TabIndex = 21;
+            label_addToURL.Text = "Company Site";
+            // 
+            // tbox_addCoUrl
+            // 
+            tbox_addCoUrl.Location = new Point(255, 130);
+            tbox_addCoUrl.Name = "tbox_addCoUrl";
+            tbox_addCoUrl.Size = new Size(514, 47);
+            tbox_addCoUrl.TabIndex = 22;
+            // 
+            // label_cleared
+            // 
+            label_cleared.AutoSize = true;
+            label_cleared.Location = new Point(29, 209);
+            label_cleared.Name = "label_cleared";
+            label_cleared.Size = new Size(198, 41);
+            label_cleared.TabIndex = 23;
+            label_cleared.Text = "Cleared Roles";
+            // 
+            // tbox_cleared
+            // 
+            tbox_cleared.Location = new Point(255, 209);
+            tbox_cleared.Name = "tbox_cleared";
+            tbox_cleared.Size = new Size(514, 47);
+            tbox_cleared.TabIndex = 24;
+            // 
+            // label_hq
+            // 
+            label_hq.AutoSize = true;
+            label_hq.Location = new Point(29, 282);
+            label_hq.Name = "label_hq";
+            label_hq.Size = new Size(197, 41);
+            label_hq.TabIndex = 25;
+            label_hq.Text = "Headquarters";
+            // 
+            // tbox_hq
+            // 
+            tbox_hq.Location = new Point(255, 282);
+            tbox_hq.Name = "tbox_hq";
+            tbox_hq.Size = new Size(514, 47);
+            tbox_hq.TabIndex = 26;
+            // 
+            // button_addToCo
+            // 
+            button_addToCo.BackColor = Color.SkyBlue;
+            button_addToCo.Location = new Point(255, 354);
+            button_addToCo.Name = "button_addToCo";
+            button_addToCo.Size = new Size(275, 58);
+            button_addToCo.TabIndex = 27;
+            button_addToCo.Text = "Add Company";
+            button_addToCo.UseVisualStyleBackColor = false;
+            button_addToCo.Click += button_addToCo_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Azure;
             ClientSize = new Size(2803, 1229);
+            Controls.Add(gbox_addCo);
             Controls.Add(label_app);
             Controls.Add(button_compUrl);
             Controls.Add(button_followURL);
@@ -406,6 +511,8 @@
             gbox_addjob.ResumeLayout(false);
             gbox_addjob.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            gbox_addCo.ResumeLayout(false);
+            gbox_addCo.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -444,5 +551,15 @@
         private Button button_followURL;
         private Button button_compUrl;
         private Label label_app;
+        private GroupBox gbox_addCo;
+        private TextBox tbox_addCoUrl;
+        private Label label_addToURL;
+        private TextBox tbox_addToCo;
+        private Label label_addcomp;
+        private Button button_addToCo;
+        private TextBox tbox_hq;
+        private Label label_hq;
+        private TextBox tbox_cleared;
+        private Label label_cleared;
     }
 }

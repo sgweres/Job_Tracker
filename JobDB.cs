@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -302,5 +303,23 @@ namespace JobTrackerWinForm
             return updatedRows;
         }
         #endregion
+        internal int addOneCompany(Company newCo)
+        {
+
+
+            //connect to mySQL server
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            connection.Open();
+            // SQL statement to retrieve items from database
+            MySqlCommand command = new MySqlCommand("INSERT INTO `company`(`Company_Name`, `Company_Url`, `Cleared_Roles`, `Co_Location`) VALUES (@coname, @coUrl, @cleared, @hq)", connection);
+            //
+            command.Parameters.AddWithValue("@coname", newCo.name);
+            command.Parameters.AddWithValue("@coUrl", newCo.website);
+            command.Parameters.AddWithValue("@cleared", newCo.clearedRoles);
+            command.Parameters.AddWithValue("@hq", newCo.location);
+            int newRows = command.ExecuteNonQuery();
+            connection.Close();
+            return newRows;
+        }
     }
 }

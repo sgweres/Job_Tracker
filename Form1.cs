@@ -82,7 +82,7 @@ namespace JobTrackerWinForm
             int result = addedJob.addOneJob(newApp);
             MessageBox.Show(result + " new row(s) inserted.");
         }
-        #endregion
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -113,8 +113,8 @@ namespace JobTrackerWinForm
 
         private void button_update_Click(object sender, EventArgs e)
         {
-            //////////////////////////////////FIX MEE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-             int rowClicked = dataGridView1.CurrentRow.Index;
+
+            int rowClicked = dataGridView1.CurrentRow.Index;
             JobApplication newApp = new JobApplication
             {
                 applicationNumber = (int)dataGridView1.Rows[rowClicked].Cells[0].Value,
@@ -130,15 +130,7 @@ namespace JobTrackerWinForm
             int result = addedJob.updateApplication(newApp);
             MessageBox.Show(result + " application updated.");
 
-            //int albumSelected = dataGridView1.CurrentRow.Index;
-            //JobApplication editApp = applicationList[albumSelected];
 
-            //tbox_addtitle.Text = editApp.jobTitle;
-            //tbox_addloc.Text = editApp.location;
-            //tbox_addstatus.Text = editApp.status;
-            //tbox_addurl.Text = editApp.jobUrl;
-            //tbox_addco.Text = editApp.appCo;
-            //tbox_addID.Text = editApp.coID;
         }
 
         private void button_followURL_Click(object sender, EventArgs e)
@@ -159,6 +151,23 @@ namespace JobTrackerWinForm
             string rowUrl = dataGridView2.Rows[rowClicked].Cells[2].Value.ToString();
 
             Process.Start("explorer", rowUrl);
+        }
+        #endregion
+
+        private void button_addToCo_Click(object sender, EventArgs e)
+        {
+            //add new company to the database
+            Company newCompany = new Company
+            {
+                name = tbox_addToCo.Text,
+                website = tbox_addCoUrl.Text,
+                clearedRoles = tbox_cleared.Text,
+                location = tbox_hq.Text,
+            };
+            //
+            JobDB addedCompany = new JobDB();
+            int result = addedCompany.addOneCompany(newCompany);
+            MessageBox.Show(result + " new row(s) inserted.");
         }
     }
 }
